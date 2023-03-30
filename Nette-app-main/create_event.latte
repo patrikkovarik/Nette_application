@@ -1,0 +1,21 @@
+{extends 'layout.latte'}
+
+{block content}
+    <h1>Vytvoření nové události</h1>
+    <form method="post" action="{link create_event}">
+    <div class="form-group">
+            <label for="name">Název události:</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="description">Popis události:</label>
+            <textarea class="form-control" id="description" name="description" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="options">Možné termíny:</label>
+            <textarea class="form-control" id="options" name="options" placeholder="Např. 2.3.2023 14:00, 4.3.2023 18:00" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Vytvořit událost</button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,20 @@
+{extends 'layout.latte'}
+
+{block content}
+    <h1>Změna hlasu</h1>
+    <p>Vyberte novou možnost:</p>
+    <form method="post" action="{link change_vote, id => $event->id}">
+        <ul>
+            {foreach $options as $option}
+            <li>
+                <label>
+                    <input type="radio" name="option" value="{$option->id}" {if $option->voted}checked{/if}>
+                    {$option->date_time|date:'d.m.Y H:i'}
+                </label>
+            </li>
+            {/foreach}
+        </ul>
+        <button type="submit">Změnit hlas</button>
+    </form>
+    <a href="{link view_event, id => $event->id}">Zpět na událost</a>
+{/block}

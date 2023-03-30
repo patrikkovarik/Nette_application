@@ -1,0 +1,7 @@
+{extends 'layout.latte'}
+<h2>Aktuální akce:</h2>
+<ul>
+    {foreach $events as $event}
+        <li><a href="{link view_event, id => $event->id}">{$event->name}</a></li>
+    {/foreach}
+</ul>
